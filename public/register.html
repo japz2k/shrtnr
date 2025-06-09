@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - URL Shortener</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-title">
+            <span class="logo">⚡</span>
+            <span class="brand">whiz.ly</span>
+        </div>
+    </header>
+    <main>
+        <div class="main-card">
+            <h1 class="main-title">Create your account</h1>
+            <p class="tagline">Register to manage your links and unlock more features.</p>
+            <form id="register-form" class="auth-form">
+                <input type="email" id="email" placeholder="Email" required autocomplete="username">
+                <input type="password" id="password" placeholder="Password" required autocomplete="new-password">
+                <button type="submit" class="cta-btn">Register</button>
+            </form>
+            <div id="register-msg" class="msg"></div>
+            <div class="switch-auth">
+                Already have an account? <a href="/login.html">Login here</a>
+            </div>
+            <button onclick="window.location.href='/'" class="back-btn">Back to Shortener</button>
+        </div>
+    </main>
+    <script src="/static/register.js"></script>
+</body>
+</html>
