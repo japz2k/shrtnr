@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link - Shorten, Track, and Analyze Links</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/landing_static/landing_style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#" class="logo">🔗 ImageWhiz</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><button id="login-modal-trigger" class="button-nav-login">Login</button></li>
+                <li><button id="nav-signup-modal-trigger" class="button-nav-signup" type="button">Sign Up</button></li> <!-- Consider styling sign-up as a button -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>📣 Shorten, Track, and Analyze Links</h1>
+            <p class="subtitle">✨ Free & Pro Plans — No Login Needed for Basic Shortening!</p>
+            <form id="shorten-form-landing">
+                <input type="url" id="url-input-landing" placeholder="Paste Your Long Link Here..." required>
+                <button type="submit">Shorten 🔗</button>
+            </form>
+            <div class="sub-text">✔️ Easy &nbsp;&nbsp; ✔️ Fast &nbsp;&nbsp; ✔️ Privacy-first</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Features Section -->
+        <section id="features" class="section-padding">
+            <div class="container">
+                <h2>Why Choose ImageWhiz?</h2>
+                <ul>
+                    <li>
+                        <i>🚀</i> <!-- Placeholder for an icon -->
+                        <h3>Smart Shortening</h3>
+                        <p>Create clean, memorable links in seconds.</p>
+                    </li>
+                    <li>
+                        <i>📊</i> <!-- Placeholder for an icon -->
+                        <h3>Advanced Analytics</h3>
+                        <p>Track clicks, referrers, devices, and more (Pro).</p>
+                    </li>
+                    <li>
+                        <i>🗂️</i> <!-- Placeholder for an icon -->
+                        <h3>Link Management</h3>
+                        <p>Organize and manage all your shortened links with ease.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="section-padding" style="background-color: #FFFFFF;"> <!-- Alternate bg color -->
+            <div class="container">
+                <h2>Get Started in 3 Simple Steps</h2>
+                <ol>
+                    <li><span class="step-number">1</span> Paste your long URL.</li>
+                    <li><span class="step-number">2</span> Click "Shorten".</li>
+                    <li><span class="step-number">3</span> Share your new short link!</li>
+                </ol>
+                <p class="text-center" style="margin-top: 20px;">(Optional) Sign up or log in to access your dashboard and unlock advanced analytics.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Cards Section -->
+        <section id="pricing" class="section-padding">
+            <div class="container">
+                <h2>Flexible Pricing for Everyone</h2>
+                <div class="pricing-cards">
+                    <div class="card">
+                        <h3>Free Plan</h3>
+                        <p class="price-tag"><strong>$0</strong> / month</p>
+                        <ul>
+                            <li>Unlimited URL Shortening</li>
+                            <li>Basic Click Tracking</li>
+                            <li>Link History (7 days)</li>
+                            <li>Standard Support</li>
+                        </ul>
+                        <button>Get Started Free</button>
+                    </div>
+                    <div class="card pro-plan"> <!-- Added pro-plan class -->
+                        <h3>Pro Plan</h3>
+                        <p class="price-tag"><strong>$9</strong> / month</p>
+                        <ul>
+                            <li>Everything in Free, plus:</li>
+                            <li>Advanced Analytics (IP, device, referrer)</li>
+                            <li>Custom Aliases</li>
+                            <li>Link Expiration & Password Protection</li>
+                            <li>QR Code Generation</li>
+                            <li>API Access</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <button>Start Free Trial</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials / Social Proof Section -->
+        <section id="testimonials" class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <h2>Loved by Users Worldwide</h2>
+                <div class="testimonial-grid"> <!-- For better layout if multiple testimonials -->
+                    <blockquote class="testimonial-card">
+                        <p>“ImageWhiz is the fastest and most intuitive link shortener I’ve ever used. The analytics are a game-changer for my campaigns!”</p>
+                        <footer>- Alex P., Digital Marketer</footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p>“The Pro plan is worth every penny. Custom aliases and detailed stats have significantly boosted my link performance.”</p>
+                        <footer>- Sarah K., Content Creator</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© <span id="current-year">2025</span> ImageWhiz. All rights reserved.</p>
+            <p>
+                <a href="#">About</a> |
+                <a href="#">Contact</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Privacy Policy</a> |
+                <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-button">&times;</span>
+            <h2>Login to ImageWhiz</h2>
+            <form id="landing-login-form">
+                <div class="form-group">
+                    <label for="modal-email">Email Address</label>
+                    <input type="email" id="modal-email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-password">Password</label>
+                    <input type="password" id="modal-password" name="password" placeholder="••••••••" required>
+                </div>
+                <div class="form-group form-group-inline">
+                    <input type="checkbox" id="modal-remember-me" name="rememberMe">
+                    <label for="modal-remember-me" class="checkbox-label">Remember me</label>
+                </div>
+                <div id="modal-login-error" class="error-message" style="display: none;"></div>
+                <button type="submit" id="modal-login-submit" class="button-primary">Login</button>
+                <p class="form-switch-text">Don't have an account? <button id="signup-modal-trigger" type="button" class="link-secondary">Sign Up</button></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-button" aria-label="Close">&times;</button>
+            <h2 class="modal-title">Create an Account</h2>
+            <div id="modal-signup-error" class="error-message" style="display:none;"></div>
+            <form id="landing-signup-form" autocomplete="off">
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required autocomplete="new-password" />
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" name="confirm_password" required autocomplete="new-password" />
+                </div>
+
+                <button type="submit" id="modal-signup-submit" class="button-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/landing_static/landing_script.js"></script>
+
+</body>
+</html>

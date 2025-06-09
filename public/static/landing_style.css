@@ -1,0 +1,735 @@
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1F2937; /* Dark Gray for text */
+  background-color: #F9FAFB; /* Light Gray background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+  color: #111827; /* Slightly darker for headings */
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+a {
+  color: #3B82F6; /* Primary Accent Blue */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #2563EB; /* Darker blue on hover */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+/* --- Navigation Bar --- */
+nav.main-nav {
+  background-color: #FFFFFF;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav.main-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav.main-nav .logo {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #3B82F6;
+}
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center; /* Vertically align nav items */
+}
+
+nav.main-nav ul li a {
+  font-weight: 500;
+  color: #4B5563; /* Medium Gray for nav links */
+  padding: 8px 0;
+  position: relative;
+}
+
+nav.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3B82F6;
+  transition: width 0.3s ease;
+}
+
+nav.main-nav ul li a:hover::after,
+nav.main-nav ul li a.active::after {
+  width: 100%;
+}
+
+nav.main-nav ul li a:hover {
+  color: #3B82F6;
+}
+
+/* Style for Sign Up button in nav */
+nav.main-nav ul li .button-nav-signup { /* Changed 'a.button-nav-signup' to '.button-nav-signup' */
+  background-color: #3B82F6; /* Primary Blue */
+  color: #FFFFFF;
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #2563EB; /* Darker blue border */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* ADDED RESETS FOR BUTTON ELEMENT */
+  font-family: inherit; 
+  font-size: 1em; 
+  font-weight: 500; /* Match existing style or adjust as needed */
+  line-height: inherit; 
+  cursor: pointer;
+  text-align: center;
+  display: inline-block; 
+  text-decoration: none; /* Ensure no underline if it was an 'a' tag before */
+}
+
+nav.main-nav ul li .button-nav-signup:hover {
+  background-color: #2563EB; /* Darker blue on hover */
+  border-color: #1D4ED8;
+  color: #FFFFFF; /* Ensure text remains white */
+}
+
+nav.main-nav ul li .button-nav-signup::after { /* If it was an 'a' tag, this removed underline */
+    display: none; 
+}
+
+/* Style for Login button in nav (outline) */
+nav.main-nav ul li .button-nav-login {
+  color: #3B82F6; /* Primary Blue text */
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #3B82F6; /* Primary Blue border */
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  /* ADDED RESETS FOR BUTTON ELEMENT */
+  font-family: inherit; 
+  font-size: 1em; /* Ensures it matches link font size if 'a' tags have specific font size */
+  font-weight: 500; /* Match signup button's inherited font-weight */
+  line-height: inherit; /* For vertical alignment */
+  cursor: pointer;
+  text-align: center;
+  display: inline-block; /* To behave like an inline element that can have padding/margin */
+}
+
+nav.main-nav ul li .button-nav-login:hover {
+  background-color: #EFF6FF; /* Light blue on hover */
+  color: #2563EB; /* Darker blue text on hover */
+  border-color: #2563EB;
+}
+
+nav.main-nav ul li .button-nav-login::after {
+    display: none; /* Remove underline effect for button */
+}
+
+/* --- Hero Section --- */
+header.hero {
+  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%); /* Blue gradient */
+  color: #FFFFFF;
+  padding: 100px 0;
+  text-align: center;
+}
+
+header.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5em;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+header.hero p.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5em;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+header.hero input[type="url"],
+header.hero input[type="text"] {
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 450px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-right: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+header.hero input[type="url"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
+
+header.hero button {
+  padding: 15px 35px;
+  background-color: #FFFFFF;
+  color: #3B82F6; /* Primary Blue */
+  border: 1px solid #FFFFFF; /* White border for contrast on hero */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px; /* For mobile stacking */
+}
+
+header.hero button:hover {
+  background-color: #EFF6FF; /* Lighter blue background */
+  transform: translateY(-2px);
+}
+
+header.hero .sub-text {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* --- Sections General --- */
+section {
+  border: none; /* Remove old borders */
+  margin-bottom: 0; /* Remove old margins */
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #3B82F6;
+  border-radius: 2px;
+}
+
+/* --- Features Section --- */
+#features ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+#features li {
+  background-color: #FFFFFF;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  border: 1px solid #9CA3AF; /* Made border darker for better visibility */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#features li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+#features li i { /* Placeholder for icons */
+  font-size: 2.5rem;
+  color: #3B82F6;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* --- How It Works Section --- */
+#how-it-works ol {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+#how-it-works li {
+  background-color: #FFFFFF;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  flex-basis: 30%;
+  min-width: 250px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#how-it-works .step-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3B82F6;
+  margin-bottom: 10px;
+}
+
+/* --- Pricing Cards Section --- */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  align-items: stretch; /* Make cards same height */
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #D1D5DB; /* Made border a step darker */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card.pro-plan { /* Special styling for pro plan */
+  border-color: #3B82F6;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.card h3 {
+  color: #3B82F6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card ul {
+  list-style: none;
+  margin-bottom: 30px;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.card ul li::before { /* Custom checkmark */
+  content: '\2714';
+  color: #34D399; /* Green check */
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.card button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #3B82F6;
+  color: white;
+  border: 1px solid #2563EB; /* Darker shade of button bg for border */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Pushes button to bottom */
+}
+
+.card button:hover {
+  background-color: #2563EB;
+}
+
+.card.pro-plan button {
+  background-color: #2563EB; /* Darker blue for pro */
+}
+.card.pro-plan button:hover {
+  background-color: #1D4ED8;
+}
+
+
+/* --- Testimonials Section --- */
+.testimonial-card, /* Target the class from HTML */
+.testimonials blockquote {
+  background-color: #FFFFFF;
+  padding: 25px;
+  border: 1px solid #D1D5DB; /* Overall light border */
+  border-left: 5px solid #3B82F6; /* Accent left border */
+  border-radius: 8px; /* Adjusted for all-around border */
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #4B5563;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.testimonials blockquote footer {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 600;
+  color: #1F2937;
+  background-color: transparent; /* Override footer style */
+  padding: 0;
+  text-align: left;
+}
+
+/* --- Footer --- */
+footer.main-footer {
+  background-color: #111827; /* Darker background for footer */
+  color: #9CA3AF; /* Lighter text for footer */
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+footer.main-footer p {
+  margin-bottom: 10px;
+}
+
+footer.main-footer a {
+  color: #60A5FA; /* Lighter blue for footer links */
+  margin: 0 10px;
+}
+
+footer.main-footer a:hover {
+  color: #93C5FD;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  header.hero h1 { font-size: 2.5rem; }
+  header.hero p.subtitle { font-size: 1.1rem; }
+  
+  nav.main-nav .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav.main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  header.hero form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  header.hero input[type="url"] {
+    margin-right: 0;
+  }
+
+  #how-it-works ol {
+    flex-direction: column;
+    align-items: center;
+  }
+  #how-it-works li {
+    width: 80%;
+    max-width: 350px;
+  }
+}
+
+
+/* --- Features Section Icons --- */
+#features li i {
+  display: inline-block; /* Allows for better centering if needed */
+  background-color: #DBEAFE; /* Light blue background for icon */
+  color: #3B82F6; /* Icon color */
+  width: 60px;
+  height: 60px;
+  line-height: 60px; /* Vertically center icon character */
+  border-radius: 50%; /* Circular background */
+  font-size: 1.8rem; /* Adjust icon size if using font icons */
+  margin-bottom: 20px;
+  text-align: center; /* Horizontally center icon character */
+}
+
+/* --- Pricing Card Price Tag --- */
+.card .price-tag {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card .price-tag strong {
+  font-size: 2.5rem;
+}
+
+/* --- Testimonials Section Enhancements --- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card { /* Replaces generic blockquote styling for testimonials */
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-left: 4px solid #3B82F6;
+  border-radius: 8px; /* Apply border-radius to all corners */
+  margin-bottom: 0; /* Remove default blockquote margin if any */
+  font-style: italic;
+  color: #4B5563;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.testimonial-card footer {
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 600;
+  color: #1F2937;
+  text-align: right;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Ensure the general blockquote style for testimonials is overridden or specific enough */
+.testimonials blockquote { /* Keep this if it's still being used, or remove if .testimonial-card covers all cases */
+  background-color: #FFFFFF;
+  padding: 25px;
+  border-left: 5px solid #3B82F6;
+  border-radius: 0 8px 8px 0; /* This was the old style, .testimonial-card is more comprehensive */
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #4B5563;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.testimonials blockquote footer {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 600;
+  color: #1F2937;
+  background-color: transparent; /* Override footer style */
+  padding: 0;
+  text-align: left; /* Old style */
+}
+
+/* Login Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    align-items: center; /* Vertical center (if using display:flex) */
+    justify-content: center; /* Horizontal center (if using display:flex) */
+}
+
+.modal.modal-open {
+    display: flex; /* Or display: block; if not using flex for centering */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto; /* 15% from the top and centered if not using flex */
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 450px; /* Maximum width */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideDownModal 0.3s ease-out;
+}
+
+@keyframes slideDownModal {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    /* Assuming --primary-color and --font-heading are defined, or use specific values */
+    color: #3B82F6; /* Fallback primary color */
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Fallback font */
+}
+
+.modal .form-group {
+    margin-bottom: 20px;
+}
+
+.modal .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.modal .form-group input[type="email"],
+.modal .form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Fallback font */
+    font-size: 1rem;
+}
+
+.modal .form-group input[type="email"]:focus,
+.modal .form-group input[type="password"]:focus {
+    border-color: #3B82F6; /* Fallback primary color */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); /* Fallback primary color with opacity */
+}
+
+.modal .form-group-inline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal .form-group-inline input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto;
+    accent-color: #3B82F6; /* Fallback primary color */
+}
+
+.modal .checkbox-label {
+    font-weight: normal;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 0; /* Override label default */
+}
+
+
+.modal .button-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #3B82F6; /* Primary Blue */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Poppins', sans-serif; /* Fallback font */
+}
+
+.modal .button-primary:hover {
+    background-color: #2563EB; /* Fallback primary color dark */
+}
+
+.modal .error-message {
+    color: #D32F2F; /* Fallback error color */
+    background-color: #ffebee; /* Light red background */
+    border: 1px solid #D32F2F; /* Fallback error color */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.modal .form-switch-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.modal .form-switch-text .link-secondary {
+    color: #3B82F6; /* Fallback primary color */
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.modal .form-switch-text .link-secondary:hover {
+    text-decoration: underline;
+}
