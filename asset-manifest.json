@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/shrtnr/static/css/main.cf890fdb.css",
+    "main.js": "/shrtnr/static/js/main.92da672d.js",
+    "service-worker.js": "/shrtnr/service-worker.js",
+    "index.html": "/shrtnr/index.html",
+    "main.cf890fdb.css.map": "/shrtnr/static/css/main.cf890fdb.css.map",
+    "main.92da672d.js.map": "/shrtnr/static/js/main.92da672d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf890fdb.css",
+    "static/js/main.92da672d.js"
+  ]
+}
